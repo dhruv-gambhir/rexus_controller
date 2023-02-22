@@ -47,3 +47,11 @@
 /home/dhruv/catkin_ws/build/controller/CMakeFiles/list_install_components.dir
 /home/dhruv/catkin_ws/build/controller/CMakeFiles/rebuild_cache.dir
 /home/dhruv/catkin_ws/build/controller/CMakeFiles/std_msgs_generate_messages_cpp.dir
+/home/dhruv/catkin_ws/build/rover_gui/CMakeFiles/install/strip.dir
+/home/dhruv/catkin_ws/build/rover_gui/CMakeFiles/install/local.dir
+/home/dhruv/catkin_ws/build/rover_gui/CMakeFiles/install.dir
+/home/dhruv/catkin_ws/build/rover_gui/CMakeFiles/list_install_components.dir
+/home/dhruv/catkin_ws/build/rover_gui/CMakeFiles/rebuild_cache.dir
+/home/dhruv/catkin_ws/build/rover_gui/CMakeFiles/edit_cache.dir
+/home/dhruv/catkin_ws/build/rover_gui/CMakeFiles/test.dir
+/home/dhruv/catkin_ws/build/rover_gui/CMakeFiles/_catkin_empty_exported_target.dir

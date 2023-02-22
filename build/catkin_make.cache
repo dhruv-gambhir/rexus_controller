@@ -1,2 +1,2 @@
-controller
+controller:rover_gui
 -DCATKIN_DEVEL_PREFIX=/home/dhruv/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/dhruv/catkin_ws/install -G Unix Makefiles
