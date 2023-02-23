@@ -10,10 +10,19 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 # Set variables for the GPIO motor pins
-pinMotorAForwards = 10
-pinMotorABackwards = 9
-pinMotorBForwards = 8
-pinMotorBBackwards = 7
+pinMotorAForwards = 12
+pinMotorABackwards = 11
+pinMotorBForwards = 10
+pinMotorBBackwards = 9
+pinMotorCForwards = 8
+pinMotorCBackwards = 7
+pinMotorDForwards = 6
+pinMotorDBackwards = 5
+pinMotorEForwards = 4
+pinMotorEBackwards = 3
+pinMotorFForwards = 2
+pinMotorFBackwards = 1
+
 
 # How many times to turn the pin on and off each second
 Frequency = 20
@@ -27,18 +36,43 @@ GPIO.setup(pinMotorAForwards, GPIO.OUT)
 GPIO.setup(pinMotorABackwards, GPIO.OUT)
 GPIO.setup(pinMotorBForwards, GPIO.OUT)
 GPIO.setup(pinMotorBBackwards, GPIO.OUT)
+GPIO.setup(pinMotorCForwards, GPIO.OUT)
+GPIO.setup(pinMotorCBackwards, GPIO.OUT)
+GPIO.setup(pinMotorDForwards, GPIO.OUT)
+GPIO.setup(pinMotorDBackwards, GPIO.OUT)
+GPIO.setup(pinMotorEForwards, GPIO.OUT)
+GPIO.setup(pinMotorEBackwards, GPIO.OUT)
+GPIO.setup(pinMotorFForwards, GPIO.OUT)
+GPIO.setup(pinMotorFBackwards, GPIO.OUT)
 
 # Set the GPIO to software PWM at 'Frequency' Hertz
 pwmMotorAForwards = GPIO.PWM(pinMotorAForwards, Frequency)
 pwmMotorABackwards = GPIO.PWM(pinMotorABackwards, Frequency)
 pwmMotorBForwards = GPIO.PWM(pinMotorBForwards, Frequency)
 pwmMotorBBackwards = GPIO.PWM(pinMotorBBackwards, Frequency)
+pwmMotorCForwards = GPIO.PWM(pinMotorCForwards, Frequency)
+pwmMotorCBackwards = GPIO.PWM(pinMotorCBackwards, Frequency)
+pwmMotorDForwards = GPIO.PWM(pinMotorDForwards, Frequency)
+pwmMotorDBackwards = GPIO.PWM(pinMotorDBackwards, Frequency)
+pwmMotorEForwards = GPIO.PWM(pinMotorEForwards, Frequency)
+pwmMotorEBackwards = GPIO.PWM(pinMotorEBackwards, Frequency)
+pwmMotorFForwards = GPIO.PWM(pinMotorFForwards, Frequency)
+pwmMotorFBackwards = GPIO.PWM(pinMotorFBackwards, Frequency)
+
 
 # Start the software PWM with a duty cycle of 0 (i.e. not moving)
 pwmMotorAForwards.start(Stop)
 pwmMotorABackwards.start(Stop)
 pwmMotorBForwards.start(Stop)
 pwmMotorBBackwards.start(Stop)
+pwmMotorCForwards.start(Stop)
+pwmMotorCBackwards.start(Stop)
+pwmMotorDForwards.start(Stop)
+pwmMotorDBackwards.start(Stop)
+pwmMotorEForwards.start(Stop)
+pwmMotorEBackwards.start(Stop)
+pwmMotorFForwards.start(Stop)
+pwmMotorFBackwards.start(Stop)
 
 # Turn all motors off
 def StopMotors():
@@ -46,6 +80,15 @@ def StopMotors():
     pwmMotorABackwards.ChangeDutyCycle(Stop)
     pwmMotorBForwards.ChangeDutyCycle(Stop)
     pwmMotorBBackwards.ChangeDutyCycle(Stop)
+    pwmMotorCForwards.ChangeDutyCycle(Stop)
+    pwmMotorCBackwards.ChangeDutyCycle(Stop)
+    pwmMotorDForwards.ChangeDutyCycle(Stop)
+    pwmMotorDBackwards.ChangeDutyCycle(Stop)
+    pwmMotorEForwards.ChangeDutyCycle(Stop)
+    pwmMotorEBackwards.ChangeDutyCycle(Stop)
+    pwmMotorFForwards.ChangeDutyCycle(Stop)
+    pwmMotorFBackwards.ChangeDutyCycle(Stop)
+
 
 # Turn both motors forwards
 def Forwards():
@@ -53,6 +96,15 @@ def Forwards():
     pwmMotorABackwards.ChangeDutyCycle(Stop)
     pwmMotorBForwards.ChangeDutyCycle(DutyCycle)
     pwmMotorBBackwards.ChangeDutyCycle(Stop)
+    pwmMotorCForwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorCBackwards.ChangeDutyCycle(Stop)
+    pwmMotorDForwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorDBackwards.ChangeDutyCycle(Stop)
+    pwmMotorEForwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorEBackwards.ChangeDutyCycle(Stop)
+    pwmMotorFForwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorFBackwards.ChangeDutyCycle(Stop)
+
 
 # Turn both motors backwards
 def Backwards():
@@ -60,20 +112,46 @@ def Backwards():
     pwmMotorABackwards.ChangeDutyCycle(DutyCycle)
     pwmMotorBForwards.ChangeDutyCycle(Stop)
     pwmMotorBBackwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorCForwards.ChangeDutyCycle(Stop)
+    pwmMotorCBackwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorDForwards.ChangeDutyCycle(Stop)
+    pwmMotorDBackwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorEForwards.ChangeDutyCycle(Stop)
+    pwmMotorEBackwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorFForwards.ChangeDutyCycle(Stop)
+    pwmMotorFBackwards.ChangeDutyCycle(DutyCycle)
+
 
 # Turn left
 def Left():
     pwmMotorAForwards.ChangeDutyCycle(Stop)
     pwmMotorABackwards.ChangeDutyCycle(DutyCycle)
-    pwmMotorBForwards.ChangeDutyCycle(DutyCycle)
-    pwmMotorBBackwards.ChangeDutyCycle(Stop)
+    pwmMotorBForwards.ChangeDutyCycle(Stop)
+    pwmMotorBBackwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorCForwards.ChangeDutyCycle(Stop)
+    pwmMotorCBackwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorDForwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorDBackwards.ChangeDutyCycle(Stop)
+    pwmMotorEForwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorEBackwards.ChangeDutyCycle(Stop)
+    pwmMotorFForwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorFBackwards.ChangeDutyCycle(Stop)
 
 # Turn Right
 def Right():
     pwmMotorAForwards.ChangeDutyCycle(DutyCycle)
     pwmMotorABackwards.ChangeDutyCycle(Stop)
-    pwmMotorBForwards.ChangeDutyCycle(Stop)
-    pwmMotorBBackwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorBForwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorBBackwards.ChangeDutyCycle(Stop)
+    pwmMotorCForwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorCBackwards.ChangeDutyCycle(Stop)
+    pwmMotorDForwards.ChangeDutyCycle(Stop)
+    pwmMotorDBackwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorEForwards.ChangeDutyCycle(Stop)
+    pwmMotorEBackwards.ChangeDutyCycle(DutyCycle)
+    pwmMotorFForwards.ChangeDutyCycle(Stop)
+    pwmMotorFBackwards.ChangeDutyCycle(DutyCycle)
+
 
 # Message handler
 def CommandCallback(commandMessage):
